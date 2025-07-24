@@ -1,13 +1,78 @@
+/* Mobile first design */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden; /* magical line that fixes scrolling */
+}
 
 
+/* Reusuable styles */
+
+:root {
+    /* colours */
+    --gray-950: rgb(17, 17, 17);
+    --gray-500: rgb(107, 107, 107);
+    --yellow: rgb(244, 208, 78);
+    --white: rgb(255, 255, 255);
+
+    /* Typography */
+
+    --text-preset-1: 900 24px/1.5 'Figtree', sans-serif;
+    --text-preset-2: 600 16px/1.5 'Figtree', sans-serif;
+    --text-preset-3: 600 14px/1.5 'Figtree', sans-serif;
+    --text-preset-3-bold: 900 14px/1.5 'Figtree', sans-serif;
+    --default-letter-spacing: 0;
+
+    /* Spacing */
+
+    --spacing-300: 24px;
+    --spacing-150: 12px;
+    --spacing-100: 8px;
+    --spacing-50: 4px;
 
 
+}
+
+/* Mobile first design */
+
+body {
+    background-color: var(--yellow);
+    
+}
+
+main {
+    max-width: 375px;
+    
+    border-radius: 1.25rem;
+    border: 1px solid var(--gray-950);
+    background-color: var(--white);
+    margin: var(--spacing-300);
+    padding: var(--spacing-300);
+
+    
+}
+
+.image { 
+    width: 100%;
+}
+
+@media (min-width: 0px) {
 
 /* Attribution */
 .attribution { 
     display: none;
     font-size: 11px; 
-    text-align: center; }
+    text-align: center; 
+}
 .attribution a { 
     color: hsl(228, 45%, 44%);
- }
+}
+}
