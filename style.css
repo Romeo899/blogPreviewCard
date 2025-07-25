@@ -4,11 +4,12 @@
 * {
     box-sizing: border-box;
     font-size: 16px;
+    padding: 0;
+    margin: 0;
 }
 
 html, body {
-    padding: 0;
-    margin: 0;
+    
     min-height: 100vh;
     overflow-x: hidden; /* magical line that fixes scrolling */
 }
@@ -46,6 +47,7 @@ html, body {
 /* default Letter spacing */
 
 .tag, .datePublished, .heading, .paragraph, .authorName {
+    margin-bottom: 12px ;
     letter-spacing: var(--default-letter-spacing);
 }
 
@@ -64,6 +66,8 @@ body {
 }
 
 main {
+    max-height: 501px;
+    max-width: 327px;
     border-radius: 1.25rem;
     border: 1px solid var(--gray-950);
     background-color: var(--white);
@@ -82,7 +86,7 @@ main {
 
 /* Image */
 .image { 
-    width: 279px;
+    width: 100%;
     border-radius: 10px;
 }
 
@@ -128,15 +132,47 @@ p.authorName {
     height: 32px;
 }
 
-@media (min-width: 0px) {
+.attribution {
+    display: none;
+}
+
+
+/* Tablet */
+@media (min-width: 768px) {
+
+.heading:hover {
+    cursor: pointer;
+    color: var(--yellow);
+}
+
+main {
+    max-width: 384px;
+    max-height: 522px;
+}
+
+
+}
+
+
+/* Desktop */
+@media (min-width: 1024px) {
+
 
 /* Attribution */
 .attribution { 
-    display: none;
-    font-size: 11px; 
+    display: block;
+    font: var(--text-preset-3);
     text-align: center; 
+
+    position: relative;
+    bottom: 20px;
 }
+
 .attribution a { 
     color: hsl(228, 45%, 44%);
+}
+
+.attribution a:hover {
+    color: var(--white);
 }
 }
