@@ -164,8 +164,8 @@ main {
     font: var(--text-preset-3);
     text-align: center; 
 
-    position: relative;
-    bottom: 20px;
+    position: absolute;
+    top: 5px;
 }
 
 .attribution a { 
