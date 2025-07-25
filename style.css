@@ -9,7 +9,7 @@
 html, body {
     padding: 0;
     margin: 0;
-    height: 100%;
+    min-height: 100vh;
     overflow-x: hidden; /* magical line that fixes scrolling */
 }
 
@@ -25,10 +25,10 @@ html, body {
 
     /* Typography */
 
-    --text-preset-1: 900 24px/1.5 'Figtree', sans-serif;
-    --text-preset-2: 600 16px/1.5 'Figtree', sans-serif;
-    --text-preset-3: 600 14px/1.5 'Figtree', sans-serif;
-    --text-preset-3-bold: 900 14px/1.5 'Figtree', sans-serif;
+    --text-preset-1: 900 24px/1.5 'Figtree', sans-serif; /* h2 */
+    --text-preset-2: 500 16px/1.5 'Figtree', sans-serif; /* p */
+    --text-preset-3: 600 14px/1.5 'Figtree', sans-serif; /* date */
+    --text-preset-3-bold: 900 14px/1.5 'Figtree', sans-serif; /* tag */
     --default-letter-spacing: 0;
 
     /* Spacing */
@@ -41,27 +41,91 @@ html, body {
 
 }
 
+/* reusable classes */
+
+/* default Letter spacing */
+
+.tag, .datePublished, .heading, .paragraph, .authorName {
+    letter-spacing: var(--default-letter-spacing);
+}
+
+.spacing-300 {
+    margin: var(--spacing-300) 0;
+}
+
 /* Mobile first design */
 
 body {
     background-color: var(--yellow);
     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main {
-    max-width: 375px;
-    
     border-radius: 1.25rem;
     border: 1px solid var(--gray-950);
     background-color: var(--white);
-    margin: var(--spacing-300);
+
+    margin: auto var(--spacing-300);
     padding: var(--spacing-300);
 
-    
+    box-shadow: 8px 8px 0 0 rgba(0,0,0,100);
+
 }
 
-.image { 
+.contentContainer {
     width: 100%;
+}
+
+
+/* Image */
+.image { 
+    width: 279px;
+    border-radius: 10px;
+}
+
+/* Tag */
+
+.tag {
+    display: inline-block;
+    border-radius: 4px;
+    font: var(--text-preset-3-bold);
+    background-color: var(--yellow);
+    padding: 4px 12px;
+}
+
+.datePublished {
+    font: var(--text-preset-3);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.heading {
+    width: 100%;
+    font: var(--text-preset-1);
+    font-size: 20px;
+}
+
+.paragraph {
+    font: var(--text-preset-2);
+    color: var(--gray-500);
+}
+
+/* author container */
+
+.authorContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+p.authorName {
+    font: var(--text-preset-3-bold);
+    margin-left: 12px;
+}
+.authorImage {
+    height: 32px;
 }
 
 @media (min-width: 0px) {
